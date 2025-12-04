@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200, height=630">
+  <title>OG Image - Start React Native</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      width: 1200px;
+      height: 630px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Decorative blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .blob-1 { width: 400px; height: 400px; top: -150px; left: -100px; }
+    .blob-2 { width: 500px; height: 500px; bottom: -200px; right: -150px; }
+    .blob-3 { width: 300px; height: 300px; top: -50px; right: 100px; background: rgba(255,255,255,0.03); }
+    
+    .card {
+      width: 1040px;
+      height: 350px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+      padding: 50px 60px;
+      display: flex;
+      gap: 50px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .react-logo {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .react-logo svg {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    
+    .subtitle {
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 40px;
+    }
+    
+    .feature {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .feature::before {
+      content: "✓";
+      color: #34d399;
+      font-weight: bold;
+    }
+    
+    .url {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  
+  <div class="card">
+    <div class="react-logo">
+      <svg viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="10" fill="#61dafb"/>
+        <ellipse cx="60" cy="60" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3"/>
+        <ellipse cx="60" cy="60" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(60 60 60)"/>
+        <ellipse cx="60" cy="60" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(120 60 60)"/>
+      </svg>
+    </div>
+    
+    <div class="content">
+      <h1>Start React Native</h1>
+      <p class="subtitle">Build iOS & Android Apps in Minutes</p>
+      <div class="features">
+        <span class="feature">One-click automated setup</span>
+        <span class="feature">No coding experience needed</span>
+        <span class="feature">macOS & Windows support</span>
+        <span class="feature">Expo + React Native ready</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="url">startreactnative.com</div>
+</body>
+</html>
+
