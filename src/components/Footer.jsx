@@ -1,63 +1,59 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react"
 
 const Footer = () => {
-  const [os, setOs] = useState('');
+  const [os, setOs] = useState("")
 
   useEffect(() => {
     const detectOS = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      if (userAgent.indexOf('mac') !== -1) {
-        return 'macOS';
-      } else if (userAgent.indexOf('win') !== -1) {
-        return 'Windows';
+      const userAgent = window.navigator.userAgent.toLowerCase()
+      if (userAgent.indexOf("mac") !== -1) {
+        return "macOS"
+      } else if (userAgent.indexOf("win") !== -1) {
+        return "Windows"
       }
-      return 'Unknown';
-    };
-    setOs(detectOS());
-  }, []);
+      return "Unknown"
+    }
+    setOs(detectOS())
+  }, [])
 
   const getDownloadLink = () => {
-    if (os === 'macOS') {
-      return '/setup-expo-macos.sh';
-    } else if (os === 'Windows') {
-      return '/setup-expo-windows.ps1';
+    if (os === "macOS") {
+      return "/setup-expo-macos.sh"
+    } else if (os === "Windows") {
+      return "/setup-expo-windows.ps1"
     }
-    return '/setup-expo-macos.sh';
-  };
+    return "/setup-expo-macos.sh"
+  }
 
   const getScriptName = () => {
-    if (os === 'macOS') {
-      return 'setup-expo-macos.sh';
-    } else if (os === 'Windows') {
-      return 'setup-expo-windows.ps1';
+    if (os === "macOS") {
+      return "setup-expo-macos.sh"
+    } else if (os === "Windows") {
+      return "setup-expo-windows.ps1"
     }
-    return 'setup-expo-macos.sh';
-  };
+    return "setup-expo-macos.sh"
+  }
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = getDownloadLink();
-    link.download = getScriptName();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+    const link = document.createElement("a")
+    link.href = getDownloadLink()
+    link.download = getScriptName()
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
     <footer className="bg-gray-900 text-white">
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Building?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Download the setup script and start creating mobile apps in minutes
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Building?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Download the setup script and start creating mobile apps in minutes</p>
           <button
             onClick={handleDownload}
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
@@ -113,22 +109,42 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://docs.expo.dev/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a
+                  href="https://docs.expo.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Expo Docs
                 </a>
               </li>
               <li>
-                <a href="https://docs.expo.dev/tutorial/introduction/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a
+                  href="https://docs.expo.dev/tutorial/introduction/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Tutorial
                 </a>
               </li>
               <li>
-                <a href="https://chat.expo.dev/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a
+                  href="https://chat.expo.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Discord Community
                 </a>
               </li>
               <li>
-                <a href="https://expo.dev/go" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a
+                  href="https://expo.dev/go"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Expo Go App
                 </a>
               </li>
@@ -150,7 +166,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://snack.expo.dev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a
+                  href="https://snack.expo.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
                   Try in Browser
                 </a>
               </li>
@@ -160,13 +181,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Start React Native. All rights reserved.
-          </p>
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
-          >
+          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Nexus Development, LLC. All rights reserved.</p>
+          <button onClick={scrollToTop} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
             Back to top
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -175,8 +191,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
-
+export default Footer
