@@ -16,8 +16,9 @@ const SetupInstructions = () => {
     { step: '1', text: 'Download the setup script', code: null },
     { step: '2', text: 'Open PowerShell as Administrator', code: 'Press Win+X, select "Windows PowerShell (Admin)"' },
     { step: '3', text: 'Navigate to Downloads', code: 'cd $env:USERPROFILE\\Downloads' },
-    { step: '4', text: 'Run the script', code: '.\\setup-expo-windows.ps1' },
-    { step: '5', text: 'Restart your computer', code: 'Restart to complete the installation' }
+    { step: '4', text: 'Allow the script to run (required once)', code: 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser' },
+    { step: '5', text: 'Run the script', code: '.\\setup-expo-windows.ps1' },
+    { step: '6', text: 'Restart your computer', code: 'Restart to complete the installation' }
   ];
 
   const instructions = activeTab === 'macos' ? macOSInstructions : windowsInstructions;
