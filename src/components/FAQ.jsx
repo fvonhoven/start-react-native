@@ -14,7 +14,7 @@ const FAQ = () => {
     },
     {
       question: 'Is this free?',
-      answer: 'Yes, completely free! All the tools installed (Node.js, VS Code, Expo CLI, Git) are open-source and free to use. Expo also offers a generous free tier that includes everything you need to build and publish apps.'
+      answer: 'Yes, completely free! All the tools installed (Node.js, VS Code, EAS CLI, Git) are open-source and free to use. Expo also offers a generous free tier that includes everything you need to build and publish apps.'
     },
     {
       question: 'Can I build iOS apps on Windows?',

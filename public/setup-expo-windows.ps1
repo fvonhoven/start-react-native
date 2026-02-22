@@ -30,7 +30,7 @@ Write-Host "  * Chocolatey (package manager)"
 Write-Host "  * Node.js (JavaScript runtime)"
 Write-Host "  * Git (version control)"
 Write-Host "  * Visual Studio Code (code editor)"
-Write-Host "  * Expo CLI (React Native framework)"
+Write-Host "  * EAS CLI (Expo build tools)"
 Write-Host ""
 Write-Host "Press Enter to continue or Ctrl+C to cancel..."
 Read-Host
@@ -110,10 +110,10 @@ if (Command-Exists code) {
     Print-Success "VS Code installed successfully"
 }
 
-# 5. Install Expo CLI globally
-Print-Status "Installing Expo CLI..."
-npm install -g expo-cli
-Print-Success "Expo CLI installed successfully"
+# 5. Install EAS CLI globally (modern Expo build tooling)
+Print-Status "Installing EAS CLI..."
+npm install -g eas-cli
+Print-Success "EAS CLI installed successfully"
 
 # 6. Install useful VS Code extensions
 Print-Status "Installing recommended VS Code extensions..."
@@ -137,7 +137,7 @@ if ($createProject -eq "y" -or $createProject -eq "Y") {
     $projectPath = "$env:USERPROFILE\ExpoProjects"
     New-Item -ItemType Directory -Force -Path $projectPath | Out-Null
     Set-Location $projectPath
-    npx create-expo-app@latest MyFirstApp --template blank
+    npx create-expo-app@latest MyFirstApp
     Print-Success "Test project created at $projectPath\MyFirstApp"
 }
 
@@ -154,7 +154,7 @@ Write-Host "Installed versions:" -ForegroundColor Blue
 Write-Host "  * Node.js: $(node -v)"
 Write-Host "  * npm: $(npm -v)"
 Write-Host "  * Git: $(git --version)"
-Write-Host "  * Expo CLI: $(expo --version)"
+Write-Host "  * EAS CLI: $(eas --version)"
 
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow

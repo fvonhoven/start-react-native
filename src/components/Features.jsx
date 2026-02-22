@@ -12,8 +12,8 @@ const Features = () => {
     },
     {
       icon: '🚀',
-      title: 'Expo CLI',
-      description: 'Complete toolchain for React Native development'
+      title: 'Expo & EAS CLI',
+      description: 'Complete toolchain for React Native development and builds'
     },
     {
       icon: '🔧',
